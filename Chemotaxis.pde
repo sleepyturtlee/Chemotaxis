@@ -92,7 +92,7 @@ void draw() {
     fill(0);
     textSize(30);
     text("Game over !", 250, 160);
-    textSize(27);
+    textSize(25);
     text("The zombies ate your", 250, 195);
     textSize(60);
     text("BRAINS!", 250, 240);
