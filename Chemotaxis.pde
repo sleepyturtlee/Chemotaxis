@@ -12,14 +12,14 @@ class Walker {
     myY += (int)(Math.random()*3) - 1; // -1, 0, 1
   
   if(playerX > myX) {
-    myX += (int)(Math.random()*6) - 0;
+    myX += (int)(Math.random()*6) - 1;
   } else {
-    myX += (int)(Math.random()*6) - 5; 
+    myX += (int)(Math.random()*6) - 4; 
   }
   if(playerY > myY) {
-    myY += (int)(Math.random()*6) - 0;
+    myY += (int)(Math.random()*6) - 1;
   } else {
-    myY += (int)(Math.random()*6) - 5;
+    myY += (int)(Math.random()*6) - 4;
   }
   
     if(dist(playerX, playerY, myX, myY) < 10) {
@@ -52,8 +52,8 @@ Walker [] friends = new Walker[20];
 int x = 250;
 int y = 250;
 boolean gameOver = false;
-int playerX = 250;;
-int playerY = 250;
+int playerX = 250;
+int playerY = 300;
 int playerVelocity = 4;
 boolean upButton = false;
 boolean downButton = false;
@@ -92,7 +92,7 @@ void draw() {
     fill(0);
     textSize(30);
     text("Game over !", 250, 160);
-    textSize(25);
+    textSize(27);
     text("The zombies ate your", 250, 195);
     textSize(60);
     text("BRAINS!", 250, 240);
@@ -142,7 +142,7 @@ if(mousePressed == true) {
            friends[i] = new Walker();
          }
          playerX = 250;
-         playerY = 250;
+         playerY = 300;
          playerVelocity = 4;
         }
       }
