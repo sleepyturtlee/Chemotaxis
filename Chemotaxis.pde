@@ -7,42 +7,24 @@ class Walker {
     coolColor = color(0, 255, 0);
   }
  
- 
   void walk() {
     myX += (int)(Math.random()*3) - 1; // can be -1, 0, 1
     myY += (int)(Math.random()*3) - 1; // -1, 0, 1
-   
-  //if(mouseX > myX) {
-  //  myX += (int)(Math.random()*5) - 1; // -1, 0, 1, 2, 3
-  //} else {
-  //  myX += (int)(Math.random()*5) -3; // -3, -2, -1, 0, 1
-  //}
-  //if(mouseY > myY) {
-  //  myY = myY + (int)(Math.random()*5) - 1;
-  //} else {
-  //  myY = myY + (int)(Math.random()*5) - 3;
-  //}
-
-  //if(dist(mouseX, mouseY, myX, myY) < 10) {
-  //  //coolColor = color(255, 0, 255);
-  //  gameOver = true;
-  //}
   
   if(playerX > myX) {
-    myX += (int)(Math.random()*6) - 1; // -1, 0, 1, 2, 3
+    myX += (int)(Math.random()*6) - 0;
   } else {
-    myX += (int)(Math.random()*6) -5; // -3, -2, -1, 0, 1
+    myX += (int)(Math.random()*6) - 5; 
   }
   if(playerY > myY) {
-    myY = myY + (int)(Math.random()*6) - 1;
+    myY += (int)(Math.random()*6) - 0;
   } else {
-    myY = myY + (int)(Math.random()*6) - 5;
+    myY += (int)(Math.random()*6) - 5;
   }
   
     if(dist(playerX, playerY, myX, myY) < 10) {
-    //coolColor = color(255, 0, 255);
-    gameOver = true;
-  }
+      gameOver = true;
+    }
   }
  
   
@@ -89,16 +71,18 @@ void setup() {
 
 void draw() {
   background(20);
-  for(int i = 0; i < friends.length; i++) {
-    friends[i].walk();
-    friends[i].show();
-  }
   
   // person
   fill(0, 0, 255);
   triangle(playerX, playerY, playerX - 10, playerY + 20, playerX + 10, playerY + 20);
   fill(255);
   ellipse(playerX, playerY, 17, 17);
+  
+  for(int i = 0; i < friends.length; i++) {
+    friends[i].walk();
+    friends[i].show();
+  }
+  
   // if the game is over... (ZOMBIES TOUCH PLAYER !)
   if(gameOver == true) {
     fill(255);
